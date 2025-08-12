@@ -6,7 +6,7 @@ enum class Side { Buy, Sell };
 enum class OrderType { Market, Limit, Stop };
 
 struct Bar {
-    std::string date;   // e.g., "2024-08-08"
+    std::string date;
     double open{}, high{}, low{}, close{}, volume{};
 };
 
@@ -27,3 +27,4 @@ struct Fill {
     double price{0.0};
     std::string date;
 };
+
