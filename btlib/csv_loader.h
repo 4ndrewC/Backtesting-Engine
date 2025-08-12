@@ -2,14 +2,13 @@
 #include <bits/stdc++.h>
 #include "types.h"
 
-// Header-only CSV loader. Expects columns like:
-// date,open,high,low,close,volume  (extra columns are ignored)
+// date,open,high,low,close,volume
 inline std::vector<Bar> load_csv(const std::string& path) {
     std::ifstream f(path);
     if (!f) throw std::runtime_error("Failed to open CSV: " + path);
 
     std::string line;
-    // header
+
     if (!std::getline(f, line)) throw std::runtime_error("Empty CSV: " + path);
 
     std::vector<Bar> bars;
@@ -34,3 +33,4 @@ inline std::vector<Bar> load_csv(const std::string& path) {
     }
     return bars;
 }
+
